@@ -37,3 +37,20 @@ foo b -- 报错
 ```
 
 注意： 省去 __()__ 的函数调用只能用于`字符串`和`表`的标量，如果是变量则会报错，即使变量的值是`字符串`或`表`。
+
+## 协程 coroutine
+
+```
+local co = coroutine.create(function()
+  print("hi")
+end)
+
+-- 创建协程后并不会自动运行
+print(coroutine.status(co))
+
+-- 让协程运行起来
+coroutine.resume(co)
+
+-- 协程运行完
+print(coroutine.status(co))
+```
