@@ -38,6 +38,9 @@ foo b -- 报错
 
 注意： 省去 __()__ 的函数调用只能用于`字符串`和`表`的标量，如果是变量则会报错，即使变量的值是`字符串`或`表`。
 
+## 模块
+lua 的模块定义非常简单，每一个 `.lua` 文件都可以成为一个模块，只需要在文件的最底部 `return` 一个函数或者表即可。请参考[module](module/)目录下的文件即可，`echo.lua` 返回一个函数，`libs.lua` 返回一个表。
+
 ## 协程 coroutine
 
 ```
@@ -51,6 +54,6 @@ print(coroutine.status(co))
 -- 让协程运行起来
 coroutine.resume(co)
 
--- 协程运行完
+-- 协程运行完成，进入 dead 状态
 print(coroutine.status(co))
 ```
